@@ -15,10 +15,20 @@
   width: calc(100% - 1em);
 }
 /* Jupyter cell is in normal mode when code mirror */
-.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor {
-  background-color: #F5F6EB;
+.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor::after {
+  content: "\00a0";
+  background-color: #444;
+  color: #fff;
+  width: 100%;
+  display: block;
+  padding-left: 0.5em;
 }
 /* Jupyter cell is in insert mode when code mirror */
-.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {
-  background-color: #F6EBF1;
+.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor)::after {
+  content: "-- INSERT --";
+  background-color: #444;
+  color: #fff;
+  width: 100%;
+  display: block;
+  padding-left: 0.5em;
 }
